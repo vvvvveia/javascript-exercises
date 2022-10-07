@@ -1,19 +1,35 @@
-const removeFromArray = function (array, num, ...moreArgs) {
-    array.splice(num - 1, 1);
+const removeFromArray = function (array, input, ...moreInput) {
+    if (typeof input === "number" && input - 1 <= array.length) {
+        array.splice(input - 1, 1);
+    } else if (typeof input === "string" && array.includes(input)) {
+        array.splice(array.indexOf(input), 1);
+    }
+
+    if (moreInput.length >= 0) {
+        for (var inputData of moreInput) {
+            if (typeof inputData === "number" && inputData - 1 > array.length) {
+                continue;
+            } else if (
+                typeof inputData === "string" &&
+                !array.includes(inputData)
+            ) {
+                continue;
+            } else if (
+                typeof inputData === "number" &&
+                inputData - 1 <= array.length
+            ) {
+                array.splice(inputData - 1, 1);
+            } else if (
+                typeof inputData === "string" &&
+                array.includes(inputData)
+            ) {
+                array.splice(array.indexOf(inputData), 1);
+            }
+        }
+    }
+
     return array;
 };
-
-/*
-if typeof `num` == number &&  num - 1 > `array.length`:
-    continue;
-if typeof `num` == string && `array` does not include `num`:
-    continue;
-while looping through values in `moreArgs`:
-    if typeof `moreArgs[?]` == number &&  `moreArgs[?]` - 1 > `array.length`:
-        continue;
-    if typeof `moreArgs[?]` == string && `array` does not include `moreArgs[?]`:
-        continue;
-*/
 
 // Do not edit below this line
 module.exports = removeFromArray;
