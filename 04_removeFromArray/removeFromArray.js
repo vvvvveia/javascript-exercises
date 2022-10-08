@@ -6,17 +6,10 @@ const removeFromArray = function (array, input, ...moreInput) {
     }
 
     if (moreInput.length >= 0) {
-        for (var inputData of moreInput) {
-            if (typeof inputData === "number" && inputData - 1 > array.length) {
-                continue;
-            } else if (
-                typeof inputData === "string" &&
-                !array.includes(inputData)
-            ) {
-                continue;
-            } else if (
+        for (let inputData of moreInput) {
+            if (
                 typeof inputData === "number" &&
-                inputData - 1 <= array.length
+                inputData <= array.length
             ) {
                 array.splice(inputData - 1, 1);
             } else if (
