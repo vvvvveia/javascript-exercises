@@ -1,5 +1,4 @@
 const sumAll = function (num1, num2) {
-    const numsToAdd = [];
     let total = 0;
 
     if (
@@ -10,11 +9,7 @@ const sumAll = function (num1, num2) {
         typeof num2 === "number"
     ) {
         for (let i = num2; i < num1; i++) {
-            numsToAdd.push(i);
-            for (let num of numsToAdd) {
-                total += num;
-                console.log(total);
-            }
+            total += 1;
         }
     } else if (
         num2 > num1 &&
@@ -24,11 +19,7 @@ const sumAll = function (num1, num2) {
         typeof num2 === "number"
     ) {
         for (let i = num1; i < num2; i++) {
-            numsToAdd.push(i);
-            for (let num of numsToAdd) {
-                total += num;
-                console.log(total);
-            }
+            total += 1;
         }
     } else {
         return "ERROR";
@@ -51,4 +42,4 @@ else
  */
 
 // Do not edit below this line
-// module.exports = sumAll;
+module.exports = sumAll;
