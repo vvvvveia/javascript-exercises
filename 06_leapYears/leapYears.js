@@ -1,19 +1,6 @@
-const leapYears = function(year) {
-    if (/* conditionals */) {
-        return true;
-    } else {
-        return false;
-    }
+const leapYears = function (year) {
+    return year % 4 === 0 && (year % 100 !== 0) || year % 400 === 0;
 };
-
-/*
-if year:
-    is divisible by 4
-    is not divisible by 100 unless divisible by 400
-        return true
-else:
-    return false
- */
 
 // Do not edit below this line
 module.exports = leapYears;
