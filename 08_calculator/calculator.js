@@ -8,8 +8,14 @@ const add = function(...numsToAdd) {
     return result;
 };
 
-const subtract = function() {
+const subtract = function(startNum, ...numsToSub) {
+    let result = startNum;
 
+    for (let num of numsToSub) {
+        result -= num;
+    }
+
+    return result;
 };
 
 const sum = function() {
