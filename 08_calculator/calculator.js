@@ -18,8 +18,14 @@ const subtract = function(startNum, ...numsToSub) {
     return result;
 };
 
-const sum = function() {
+const sum = function(numsToSum) {
+    let result = [0];
 
+    for (let num of numsToSum) {
+        result = Number(result) + Number(num);
+    }
+
+    return Number(result);
 };
 
 const multiply = function() {
